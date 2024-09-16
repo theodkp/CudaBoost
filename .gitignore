@@ -1,0 +1,13 @@
+# Build artifacts
+*.o
+*.obj
+*.so
+*.a
+*.dll
+*.dylib
+*.lib
+*.exe
+*.out
+*.app
+
+.vscode
