@@ -7,8 +7,11 @@ int main() {
 
         std::cout << "Dataset Loaded" << "\n";
 
-        for (int i = 0; i <data.featureNames.size(); i++){
-            std::cout << data.featureNames[i] << "\n";
+        for (int i = 0; i <data.data.size(); i++){
+            for (int j = 0; j < data.data[i].size(); j++){
+                std::cout << data.data[i][j] << " ";
+            }
+            std::cout << "\n";
         }
 
 

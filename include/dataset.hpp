@@ -6,7 +6,7 @@
 
 struct Dataset {
     std::vector<std::string> featureNames;
-    std::vector<std::vector<std::string>> data;
+    std::vector<std::vector<float>> data;
 };
 
 Dataset loadCSV(const std::string& filename);
