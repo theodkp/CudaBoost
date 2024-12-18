@@ -22,3 +22,7 @@ CMakeCache.txt
 *.dll
 *.lib
 *.a
+.env
+pybind11/
+googletest/
+*.pyd
