@@ -7,11 +7,9 @@ import gbm_pybind as gbm
 
 data = gbm.load_csv("data/iris.csv")
 
-print(data.data)
-
+print(data.featureNames)
 ## Create a model
-
-# params = {'n_estimators': 120, 'max_depth': 3, 'learning_rate': 0.1, 'device': "gpu"}
+# params = {'n_estimators': 100, 'max_depth': 3, 'learning_rate': 0.1, 'device': "gpu"}
 # model = gbm.Regressor(**params)
 ## model = gbm.Classifier()
 
