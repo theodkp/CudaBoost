@@ -1,27 +1,28 @@
-from typing import List, Any
+from typing import List, Optional, Union
+import numpy as np
+import numpy.typing as npt
 
-class Dataset:
-    """Python binding for the C++ Dataset class."""
-    
-    def __init__(self) -> None:
-        """Initialize an empty Dataset."""
-        ...
-    
-    featureNames: List[str]
-    """Names of features in the dataset."""
-    
-    data: List[List[float]]
-    """The actual data as a 2D list of floats."""
+class Regressor:
+    n_estimators: int
+    max_depth: int
+    learning_rate: float
+    n_bins: int
+    device: str
 
-def load_csv(filename: str) -> Dataset:
-    """
-    A function to load a CSV file into a Dataset.
-    
-    Args:
-        filename: Path to the CSV file to load
-        
-    Returns:
-        A Dataset object containing the loaded data
-    """
-    ... 
+    def __init__(
+        self,
+        n_estimators: int = 100,
+        max_depth: int = 3,
+        learning_rate: float = 0.1,
+        n_bins: int = 256,
+        device: str = "cpu"
+    ) -> None: ...
+
+    def fit(
+        self,
+        # accepts 2d List or 2d numpy array
+        X: Union[List[List[float]], npt.NDArray[np.float32]],
+        # accepts 1d List or 1d numpy array
+        y: Union[List[float], npt.NDArray[np.float32]]
+    ) -> None: ... 
 

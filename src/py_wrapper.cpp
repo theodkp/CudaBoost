@@ -1,19 +1,23 @@
-
 #include <pybind11/stl.h>
 #include <pybind11/pybind11.h>
-
-#include "dataset.hpp"
+#include <regressor.hpp>
 
 namespace py = pybind11;
 
-// Bind the loadCSV function to Python
 PYBIND11_MODULE(gbm_pybind, m) {
+    m.doc() = "Gradient Boosting Machine implementation in C++";
 
-    // Expose loadCSV to Python
-    m.def("load_csv", &loadCSV, "A function to load a CSV file into a Dataset");
-
-    py::class_<Dataset>(m, "Dataset")
-        .def(py::init<>())
-        .def_readwrite("featureNames", &Dataset::featureNames)
-        .def_readwrite("data", &Dataset::data);
+    py::class_<Regressor>(m, "Regressor")
+        .def(py::init<int, int, float, int, std::string>(),
+            // default values
+            py::arg("n_estimators") = 100,
+            py::arg("max_depth") = 3,
+            py::arg("learning_rate") = 0.1f,
+            py::arg("n_bins") = 256,
+            py::arg("device") = "cpu"
+        )
+        .def("fit", &Regressor::fit,
+            py::arg("X"),
+            py::arg("y")
+        );
 }
