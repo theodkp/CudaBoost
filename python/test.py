@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 
 import gbm_pybind as gbm
 
-## Load data
 params = {'n_estimators': 100, 'max_depth': 3, 'learning_rate': 0.1, "n_bins":0, 'device': "gpu"}
 
 model = gbm.Regressor(**params)
@@ -15,8 +14,6 @@ model = gbm.Regressor(**params)
 
 
 
-# Create a model
-# model = gbm.Regressor(**params)
 
 
 ### y :expects 1d array
