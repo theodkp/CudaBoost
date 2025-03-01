@@ -9,7 +9,6 @@ PYBIND11_MODULE(gbm_pybind, m) {
 
     py::class_<Regressor>(m, "Regressor")
         .def(py::init<int, int, float, int, std::string>(),
-            // default values
             py::arg("n_estimators") = 100,
             py::arg("max_depth") = 3,
             py::arg("learning_rate") = 0.1f,
@@ -17,7 +16,11 @@ PYBIND11_MODULE(gbm_pybind, m) {
             py::arg("device") = "cpu"
         )
         .def("fit", &Regressor::fit,
-            py::arg("X"),
-            py::arg("y")
-        );
+           py::arg("X"),
+           py::arg("y")
+        )
+        .def("predict", &Regressor::predict,
+           py::arg("X")
+        );        
+
 }

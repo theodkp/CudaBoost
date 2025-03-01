@@ -3,11 +3,6 @@ import numpy as np
 import numpy.typing as npt
 
 class Regressor:
-    n_estimators: int
-    max_depth: int
-    learning_rate: float
-    n_bins: int
-    device: str
 
     def __init__(
         self,
@@ -24,5 +19,12 @@ class Regressor:
         X: Union[List[List[float]], npt.NDArray[np.float32]],
         # accepts 1d List or 1d numpy array
         y: Union[List[float], npt.NDArray[np.float32]]
-    ) -> None: ... 
+    
+    
+    ) -> None: ...
 
+    def predict(
+            self,
+            X: Union[List[List[float]], npt.NDArray[np.float32]]
+    ) -> npt.NDArray[np.float32]: ...
+    
