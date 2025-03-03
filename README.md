@@ -2,15 +2,9 @@
 
 A gradient boosting library featuring:
 - Fast C++ implementation
+- Regression and Classification tasks (todo)
 - CUDA-accelerated histogram building (planned)
-- Python bindings
-
-## Features
-
-- C++ implementation of Gradient Boosting Machine
-- Regression and Classification support (todo)
-- CUDA support for Histogram building (todo)
-- Python bindings to use the library directly in Python
+- Python bindings and interface
 - Testing framework using GoogleTest (todo)
 
 ---
