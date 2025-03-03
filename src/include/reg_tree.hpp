@@ -20,7 +20,7 @@ struct Node {
     }
 };
 
-class Tree{
+class RegTree{
     private:
         Node* root;
         int max_depth;
@@ -31,12 +31,12 @@ class Tree{
         float _predict_one(const std::vector<float>& x, Node* node);
 
     public:
-        Tree(int max_depth = 3);
+        RegTree(int max_depth = 3);
         
         void fit(const std::vector<std::vector<float>>& X, const std::vector<float>& y);
         std::vector<float> predict(const std::vector<std::vector<float>>& X);
 
-        ~Tree(){
+        ~RegTree(){
             delete root;
         }
 };
