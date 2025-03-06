@@ -9,8 +9,6 @@ class Regressor:
         n_estimators: int = 100,
         max_depth: int = 3,
         learning_rate: float = 0.1,
-        n_bins: int = 256,
-        device: str = "cpu"
     ) -> None: ...
 
     def fit(
