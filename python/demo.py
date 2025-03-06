@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 import gbm_pybind as gbm
 
-params = {'n_estimators': 1000, 'max_depth': 1, 'learning_rate': 0.03}
+params = {'n_estimators': 5000, 'max_depth': 2, 'learning_rate': 0.005}
 
 model = gbm.Regressor(**params)
 
@@ -17,28 +17,25 @@ X = np.linspace(0, 10, 100)
 X = X.astype(np.float32)
 
 ### y :expects 1d array
-y = 3.0 * X + np.random.randn(100) * 2
+y = (
+    3.0 * np.sin(X) + 0.2 * X**2 + np.random.randn(100) * 0.5  
+)
 y = y.astype(np.float32)
 
 X = X.reshape(-1,1)
 y = y.ravel()
 
-# fit model
 model.fit(X,y)
 
-X_test = np.linspace(3, 7, 10)
+X_test = np.linspace(0, 10, 10) 
 X_test = X_test.reshape(-1,1)
 X_test = X_test.astype(np.float32)
 
-
-y_test = 3.0 * X_test + np.random.randn(10) * 2
-y_test = y_test.astype(np.float32) 
-y_test = y_test.ravel()
+y_test = (3.0 * np.sin(X_test.ravel()) +0.2 * X_test.ravel()**2 + np.random.randn(10) * 0.5 )
+y_test = y_test.astype(np.float32)
 
 
-#predict on unseen data
 y_pred = model.predict(X_test)
-
 
 
 def calculate_mse(predictions, targets):
@@ -46,9 +43,11 @@ def calculate_mse(predictions, targets):
     return sum(squared_errors) / len(predictions)
 
 
+print([(y_pred[i],y_test[i]) for i in range(len(y_pred))])
 
 mse = calculate_mse(y_pred, y_test)
-print("Training MSE:", mse)
+print("MSE:", mse)
+
 
 
 
