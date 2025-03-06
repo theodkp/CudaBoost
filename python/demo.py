@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 import gbm_pybind as gbm
 
-params = {'n_estimators': 23, 'max_depth': 3, 'learning_rate': 0.1, "n_bins":0, 'device': "gpu"}
+params = {'n_estimators': 1000, 'max_depth': 1, 'learning_rate': 0.03}
 
 model = gbm.Regressor(**params)
 
@@ -48,10 +48,7 @@ def calculate_mse(predictions, targets):
 
 
 mse = calculate_mse(y_pred, y_test)
-
 print("Training MSE:", mse)
 
-
-print(len(X),len(y))
 
 
