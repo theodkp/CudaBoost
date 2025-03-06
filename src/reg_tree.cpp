@@ -186,7 +186,7 @@ float RegTree::_predict_one(const std::vector<float>& x, Node* node) const {
         return node->value;
     }
     
-    if (x[node->feature] <= node->threshold){
+    if (x[node->feature] < node->threshold){
         return _predict_one(x, node->left);
     } else {
         return _predict_one(x, node->right);

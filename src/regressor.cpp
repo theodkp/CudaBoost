@@ -72,7 +72,7 @@ void Regressor::fit(const std::vector<std::vector<float>>& X, const std::vector<
         }
         
         current_mse = calculate_mse(current_preds, y);
-        std::cout << "Tree " << (i+1) << "/" << n_estimators << " - MSE: " 
+        std::cout << "Iteration: " << (i+1) << "/" << n_estimators << " - Training MSE: " 
                   << std::fixed << std::setprecision(4) << current_mse << std::endl;
         
         
@@ -97,8 +97,8 @@ void Regressor::fit(const std::vector<std::vector<float>>& X, const std::vector<
         }
                 
     }
-    
-    std::cout << " best MSE: " << std::fixed << std::setprecision(4) << best_mse << std::endl;
+    std::cout << "--------------------------------" << std::endl;
+    std::cout << "Best MSE: " << std::fixed << std::setprecision(4) << best_mse << std::endl;
 }
 
 /// @brief Making a prediction
