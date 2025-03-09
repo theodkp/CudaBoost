@@ -10,7 +10,7 @@ A high-performance gradient boosting library written in C++ with cuda support
 
 ### Machine Learning
 - 📊 Regression support
-- 🔄 Classification tasks (planned)
+- 🔄 Binary Classification support (planned)
 
 ### Performance & Testing
 - ⚡ CUDA-accelerated histogram building (planned)
