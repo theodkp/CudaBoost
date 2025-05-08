@@ -1,25 +1,19 @@
 # CudaBoost
 
-A high-performance gradient boosting library written in C++ with cuda support
+A high-performance gradient boosting library written in C++ with CUDA support
 
 ## Features
 
 ### Core Implementation
-- 🚀 Fast C++ implementation
-- 🐍 Python bindings and interface
+- Fast C++ implementation
+- Python bindings and interface
 
-### Machine Learning
-- 📊 Regression support
-- 🔄 Binary Classification support (planned)
+### Supports
+- Regression tasks
+- Binary Classification tasks (planned)
 
-### Performance & Testing
-- ⚡ CUDA-accelerated histogram building (planned)
-- 🧪 GoogleTest framework integration (planned)
+### Performance
+- CUDA-accelerated histogram building (planned)
 
-## Project Structure
 
-```
-todo
-
----
 
